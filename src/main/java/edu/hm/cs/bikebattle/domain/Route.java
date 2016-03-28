@@ -2,13 +2,12 @@ package edu.hm.cs.bikebattle.domain;
 
 import lombok.Data;
 import lombok.RequiredArgsConstructor;
-import org.hibernate.validator.constraints.Email;
 import org.hibernate.validator.constraints.Length;
 
-import javax.persistence.Column;
+import javax.persistence.ElementCollection;
 import javax.persistence.Entity;
-import javax.persistence.ManyToMany;
-import javax.persistence.OneToMany;
+import javax.persistence.EnumType;
+import javax.persistence.Enumerated;
 import javax.validation.constraints.Min;
 import javax.validation.constraints.NotNull;
 import java.util.ArrayList;
@@ -28,29 +27,20 @@ import java.util.List;
 @Entity
 @Data
 @RequiredArgsConstructor
-public class User extends BaseEntity{
+public class Route extends BaseEntity{
 
     @Length(min = 1)
     String name;
 
-    @Email(regexp = "^[_A-Za-z0-9-\\+]+(\\.[_A-Za-z0-9-]+)*@"
-            + "[A-Za-z0-9-]+(\\.[A-Za-z0-9]+)*(\\.[A-Za-z]{2,})$")
+    boolean privat;
+
+    @Min(0)
+    float length;
+
+    @Enumerated(EnumType.STRING)
     @NotNull
-    @Column(unique = true)
-    String email;
+    Difficulty difficulty;
 
-    @Min(0)
-    float size;
-
-    @Min(0)
-    float weight;
-
-    @ManyToMany
-    List<User> friends = new ArrayList<>();
-
-    @OneToMany
-    List<Route> routes = new ArrayList<>();
-
-    @OneToMany
-    List<Drive> drives = new ArrayList<>();
+    @ElementCollection
+    List<RoutePoint> routePoints = new ArrayList<>();
 }
