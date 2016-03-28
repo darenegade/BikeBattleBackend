@@ -3,9 +3,11 @@
 ##Starten
 1. Mit Intellij das Repo importieren
 
-2a. BackendApplication.main als Spring Application starten
+2. Lombok Plugin installieren und als PreProcessor für das Projekt aktivieren
 
-2b. Mit Gradle WAR File bauen und in Tomcat deployn
+3a. BackendApplication.main als Spring Application starten
+
+3b. Mit Gradle WAR File bauen und in Tomcat deployn
 
 ##RESTfull
 Erlaubt sind alle CRUD Operationen und es ist eine Suche implementiert. Hateos ist integriert.
