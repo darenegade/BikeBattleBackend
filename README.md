@@ -3,7 +3,7 @@
 ##Starten
 1. Mit Intellij das Repo importieren
 
-2. Lombok Plugin installieren und als PreProcessor für das Projekt aktivieren
+2. Lombok Plugin installieren und als Annotation Processors für das Projekt aktivieren (https://github.com/mplushnikov/lombok-intellij-plugin)
 
 3a. BackendApplication.main als Spring Application starten
 
