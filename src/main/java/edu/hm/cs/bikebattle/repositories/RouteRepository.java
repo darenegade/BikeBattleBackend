@@ -21,6 +21,9 @@ import java.util.UUID;
 @RepositoryRestResource
 public interface RouteRepository extends JpaRepository<Route, UUID> {
 
-    List<Route> findDifficulty(@Param("difficulty") Difficulty difficulty);
+    List<Route> findByDifficulty(@Param("difficulty") Difficulty difficulty);
+
+    List<Route> findByName(@Param("name") String name);
+    List<Route> findByNameContainingIgnoreCase(@Param("name") String name);
 
 }
