@@ -20,34 +20,34 @@ public class Drive_EventService {
     // <EntityName>Repository repo;
 
 
-    void onAfterCreate(Drive entity){
+    public void onAfterCreate(Drive entity){
         //Add your Logic here
     }
-    void onBeforeCreate(Drive entity){
+    public void onBeforeCreate(Drive entity){
         //Add your Logic here
     }
-    void onBeforeSave(Drive entity){
+    public void onBeforeSave(Drive entity){
         //Add your Logic here
     }
-    void onAfterSave(Drive entity){
+    public void onAfterSave(Drive entity){
         //Add your Logic here
     }
-    void onBeforeLinkSave(Drive parent, Object linked){
+    public  void onBeforeLinkSave(Drive parent, Object linked){
         //Add your Logic here
     }
-    void onAfterLinkSave(Drive parent, Object linked){
+    public void onAfterLinkSave(Drive parent, Object linked){
         //Add your Logic here
     }
-    void onBeforeLinkDelete(Drive parent, Object linked){
+    public void onBeforeLinkDelete(Drive parent, Object linked){
         //Add your Logic here
     }
-    void onBeforeDelete(Drive entity){
+    public void onBeforeDelete(Drive entity){
         //Add your Logic here
     }
-    void onAfterDelete(Drive entity){
+    public void onAfterDelete(Drive entity){
         //Add your Logic here
     }
-    void onAfterLinkDelete(Drive parent, Object linked){
+    public void onAfterLinkDelete(Drive parent, Object linked){
         //Add your Logic here
     }
 }

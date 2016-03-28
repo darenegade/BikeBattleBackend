@@ -20,34 +20,34 @@ public class User_EventService {
     // <EntityName>Repository repo;
 
 
-    void onAfterCreate(User entity){
+    public void onAfterCreate(User entity){
         //Add your Logic here
     }
-    void onBeforeCreate(User entity){
+    public void onBeforeCreate(User entity){
         //Add your Logic here
     }
-    void onBeforeSave(User entity){
+    public void onBeforeSave(User entity){
         //Add your Logic here
     }
-    void onAfterSave(User entity){
+    public void onAfterSave(User entity){
         //Add your Logic here
     }
-    void onBeforeLinkSave(User parent, Object linked){
+    public void onBeforeLinkSave(User parent, Object linked){
         //Add your Logic here
     }
-    void onAfterLinkSave(User parent, Object linked){
+    public void onAfterLinkSave(User parent, Object linked){
         //Add your Logic here
     }
-    void onBeforeLinkDelete(User parent, Object linked){
+    public void onBeforeLinkDelete(User parent, Object linked){
         //Add your Logic here
     }
-    void onBeforeDelete(User entity){
+    public void onBeforeDelete(User entity){
         //Add your Logic here
     }
-    void onAfterDelete(User entity){
+    public void onAfterDelete(User entity){
         //Add your Logic here
     }
-    void onAfterLinkDelete(User parent, Object linked){
+    public void onAfterLinkDelete(User parent, Object linked){
         //Add your Logic here
     }
 }

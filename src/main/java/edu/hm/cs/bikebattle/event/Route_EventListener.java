@@ -1,6 +1,7 @@
 package edu.hm.cs.bikebattle.event;
 
 import edu.hm.cs.bikebattle.domain.Route;
+import edu.hm.cs.bikebattle.services.Route_EventService;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.data.rest.core.event.AbstractRepositoryEventListener;
 import org.springframework.stereotype.Component;
@@ -16,7 +17,7 @@ import org.springframework.stereotype.Component;
 @Component
 public class Route_EventListener extends AbstractRepositoryEventListener<Route> {
 	@Autowired
-	Route_EventListener service;
+	Route_EventService service;
 	
 	@Override
 	protected void onAfterCreate(Route entity) {

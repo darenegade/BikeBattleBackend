@@ -1,6 +1,7 @@
 package edu.hm.cs.bikebattle.event;
 
 import edu.hm.cs.bikebattle.domain.Drive;
+import edu.hm.cs.bikebattle.services.Drive_EventService;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.data.rest.core.event.AbstractRepositoryEventListener;
 import org.springframework.stereotype.Component;
@@ -16,7 +17,7 @@ import org.springframework.stereotype.Component;
 @Component
 public class Drive_EventListener extends AbstractRepositoryEventListener<Drive> {
 	@Autowired
-	Drive_EventListener service;
+	Drive_EventService service;
 	
 	@Override
 	protected void onAfterCreate(Drive entity) {

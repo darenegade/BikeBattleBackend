@@ -20,34 +20,34 @@ public class Route_EventService {
     // <EntityName>Repository repo;
 
 
-    void onAfterCreate(Route entity){
+    public void onAfterCreate(Route entity){
         //Add your Logic here
     }
-    void onBeforeCreate(Route entity){
+    public void onBeforeCreate(Route entity){
         //Add your Logic here
     }
-    void onBeforeSave(Route entity){
+    public void onBeforeSave(Route entity){
         //Add your Logic here
     }
-    void onAfterSave(Route entity){
+    public void onAfterSave(Route entity){
         //Add your Logic here
     }
-    void onBeforeLinkSave(Route parent, Object linked){
+    public void onBeforeLinkSave(Route parent, Object linked){
         //Add your Logic here
     }
-    void onAfterLinkSave(Route parent, Object linked){
+    public void onAfterLinkSave(Route parent, Object linked){
         //Add your Logic here
     }
-    void onBeforeLinkDelete(Route parent, Object linked){
+    public void onBeforeLinkDelete(Route parent, Object linked){
         //Add your Logic here
     }
-    void onBeforeDelete(Route entity){
+    public void onBeforeDelete(Route entity){
         //Add your Logic here
     }
-    void onAfterDelete(Route entity){
+    public void onAfterDelete(Route entity){
         //Add your Logic here
     }
-    void onAfterLinkDelete(Route parent, Object linked){
+    public void onAfterLinkDelete(Route parent, Object linked){
         //Add your Logic here
     }
 }

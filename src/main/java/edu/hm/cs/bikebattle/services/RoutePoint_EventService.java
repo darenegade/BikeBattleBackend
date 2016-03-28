@@ -20,34 +20,34 @@ public class RoutePoint_EventService {
     // <EntityName>Repository repo;
 
 
-    void onAfterCreate(RoutePoint entity){
+    public void onAfterCreate(RoutePoint entity){
         //Add your Logic here
     }
-    void onBeforeCreate(RoutePoint entity){
+    public void onBeforeCreate(RoutePoint entity){
         //Add your Logic here
     }
-    void onBeforeSave(RoutePoint entity){
+    public void onBeforeSave(RoutePoint entity){
         //Add your Logic here
     }
-    void onAfterSave(RoutePoint entity){
+    public void onAfterSave(RoutePoint entity){
         //Add your Logic here
     }
-    void onBeforeLinkSave(RoutePoint parent, Object linked){
+    public void onBeforeLinkSave(RoutePoint parent, Object linked){
         //Add your Logic here
     }
-    void onAfterLinkSave(RoutePoint parent, Object linked){
+    public void onAfterLinkSave(RoutePoint parent, Object linked){
         //Add your Logic here
     }
-    void onBeforeLinkDelete(RoutePoint parent, Object linked){
+    public void onBeforeLinkDelete(RoutePoint parent, Object linked){
         //Add your Logic here
     }
-    void onBeforeDelete(RoutePoint entity){
+    public void onBeforeDelete(RoutePoint entity){
         //Add your Logic here
     }
-    void onAfterDelete(RoutePoint entity){
+    public void onAfterDelete(RoutePoint entity){
         //Add your Logic here
     }
-    void onAfterLinkDelete(RoutePoint parent, Object linked){
+    public void onAfterLinkDelete(RoutePoint parent, Object linked){
         //Add your Logic here
     }
 }

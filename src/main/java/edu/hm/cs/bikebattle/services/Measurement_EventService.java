@@ -20,34 +20,34 @@ public class Measurement_EventService {
     // <EntityName>Repository repo;
 
 
-    void onAfterCreate(Measurement entity){
+    public void onAfterCreate(Measurement entity){
         //Add your Logic here
     }
-    void onBeforeCreate(Measurement entity){
+    public void onBeforeCreate(Measurement entity){
         //Add your Logic here
     }
-    void onBeforeSave(Measurement entity){
+    public void onBeforeSave(Measurement entity){
         //Add your Logic here
     }
-    void onAfterSave(Measurement entity){
+    public void onAfterSave(Measurement entity){
         //Add your Logic here
     }
-    void onBeforeLinkSave(Measurement parent, Object linked){
+    public void onBeforeLinkSave(Measurement parent, Object linked){
         //Add your Logic here
     }
-    void onAfterLinkSave(Measurement parent, Object linked){
+    public void onAfterLinkSave(Measurement parent, Object linked){
         //Add your Logic here
     }
-    void onBeforeLinkDelete(Measurement parent, Object linked){
+    public void onBeforeLinkDelete(Measurement parent, Object linked){
         //Add your Logic here
     }
-    void onBeforeDelete(Measurement entity){
+    public void onBeforeDelete(Measurement entity){
         //Add your Logic here
     }
-    void onAfterDelete(Measurement entity){
+    public void onAfterDelete(Measurement entity){
         //Add your Logic here
     }
-    void onAfterLinkDelete(Measurement parent, Object linked){
+    public void onAfterLinkDelete(Measurement parent, Object linked){
         //Add your Logic here
     }
 }

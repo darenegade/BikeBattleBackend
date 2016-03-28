@@ -1,6 +1,7 @@
 package edu.hm.cs.bikebattle.event;
 
 import edu.hm.cs.bikebattle.domain.User;
+import edu.hm.cs.bikebattle.services.User_EventService;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.data.rest.core.event.AbstractRepositoryEventListener;
 import org.springframework.stereotype.Component;
@@ -16,7 +17,7 @@ import org.springframework.stereotype.Component;
 @Component
 public class User_EventListener extends AbstractRepositoryEventListener<User> {
 	@Autowired
-	User_EventListener service;
+	User_EventService service;
 	
 	@Override
 	protected void onAfterCreate(User entity) {
