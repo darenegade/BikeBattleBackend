@@ -2,12 +2,12 @@ package edu.hm.cs.bikebattle.domain;
 
 import lombok.Data;
 import lombok.RequiredArgsConstructor;
-import org.hibernate.validator.constraints.Length;
 
 import javax.persistence.Entity;
-import javax.persistence.ManyToMany;
+import javax.persistence.ManyToOne;
 import javax.persistence.OneToMany;
 import javax.validation.constraints.Min;
+import javax.validation.constraints.NotNull;
 import java.util.ArrayList;
 import java.util.List;
 
@@ -25,23 +25,19 @@ import java.util.List;
 @Entity
 @Data
 @RequiredArgsConstructor
-public class User extends BaseEntity{
-
-    @Length(min = 1)
-    String name;
+public class Drive extends BaseEntity{
 
     @Min(0)
-    float size;
+    float totalTime;
 
     @Min(0)
-    float weight;
-
-    @ManyToMany
-    List<User> friends = new ArrayList<>();
+    float averageSpeed;
 
     @OneToMany
-    List<Route> routes = new ArrayList<>();
+    List<Measurement> measurements = new ArrayList<>();
 
-    @OneToMany
-    List<Drive> drives = new ArrayList<>();
+    @NotNull
+    @ManyToOne
+    Route route;
+
 }

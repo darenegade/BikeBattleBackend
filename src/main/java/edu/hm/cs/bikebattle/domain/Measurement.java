@@ -2,14 +2,10 @@ package edu.hm.cs.bikebattle.domain;
 
 import lombok.Data;
 import lombok.RequiredArgsConstructor;
-import org.hibernate.validator.constraints.Length;
 
+import javax.persistence.Embedded;
 import javax.persistence.Entity;
-import javax.persistence.ManyToMany;
-import javax.persistence.OneToMany;
 import javax.validation.constraints.Min;
-import java.util.ArrayList;
-import java.util.List;
 
 
 /**
@@ -25,23 +21,14 @@ import java.util.List;
 @Entity
 @Data
 @RequiredArgsConstructor
-public class User extends BaseEntity{
-
-    @Length(min = 1)
-    String name;
+public class Measurement extends BaseEntity{
 
     @Min(0)
-    float size;
+    float time;
 
     @Min(0)
-    float weight;
+    float speed;
 
-    @ManyToMany
-    List<User> friends = new ArrayList<>();
-
-    @OneToMany
-    List<Route> routes = new ArrayList<>();
-
-    @OneToMany
-    List<Drive> drives = new ArrayList<>();
+    @Embedded
+    RoutePoint routePoint;
 }

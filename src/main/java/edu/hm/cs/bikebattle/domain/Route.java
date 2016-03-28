@@ -4,10 +4,12 @@ import lombok.Data;
 import lombok.RequiredArgsConstructor;
 import org.hibernate.validator.constraints.Length;
 
+import javax.persistence.ElementCollection;
 import javax.persistence.Entity;
-import javax.persistence.ManyToMany;
-import javax.persistence.OneToMany;
+import javax.persistence.EnumType;
+import javax.persistence.Enumerated;
 import javax.validation.constraints.Min;
+import javax.validation.constraints.NotNull;
 import java.util.ArrayList;
 import java.util.List;
 
@@ -25,23 +27,20 @@ import java.util.List;
 @Entity
 @Data
 @RequiredArgsConstructor
-public class User extends BaseEntity{
+public class Route extends BaseEntity{
 
     @Length(min = 1)
     String name;
 
-    @Min(0)
-    float size;
+    boolean privat;
 
     @Min(0)
-    float weight;
+    float length;
 
-    @ManyToMany
-    List<User> friends = new ArrayList<>();
+    @Enumerated(EnumType.STRING)
+    @NotNull
+    Difficulty difficulty;
 
-    @OneToMany
-    List<Route> routes = new ArrayList<>();
-
-    @OneToMany
-    List<Drive> drives = new ArrayList<>();
+    @ElementCollection
+    List<RoutePoint> routePoints = new ArrayList<>();
 }

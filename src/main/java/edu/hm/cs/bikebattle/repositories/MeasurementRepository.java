@@ -1,11 +1,9 @@
 package edu.hm.cs.bikebattle.repositories;
 
-import edu.hm.cs.bikebattle.domain.User;
+import edu.hm.cs.bikebattle.domain.Measurement;
 import org.springframework.data.jpa.repository.JpaRepository;
-import org.springframework.data.repository.query.Param;
 import org.springframework.data.rest.core.annotation.RepositoryRestResource;
 
-import java.util.List;
 import java.util.UUID;
 
 /**
@@ -18,7 +16,5 @@ import java.util.UUID;
  * System: 2,3 GHz Intel Core i7, 16 GB 1600 MHz DDR3
  */
 @RepositoryRestResource
-public interface UserRepository extends JpaRepository<User, UUID> {
-
-    List<User> findByName(@Param("name") String name);
+public interface MeasurementRepository extends JpaRepository<Measurement, UUID> {
 }
