@@ -41,6 +41,10 @@ public class Route extends BaseEntity{
     @NotNull
     Difficulty difficulty;
 
+    @Enumerated(EnumType.STRING)
+    @NotNull
+    Routetyp routetyp;
+
     @ElementCollection
     List<RoutePoint> routePoints = new ArrayList<>();
 }
