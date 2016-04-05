@@ -1,7 +1,6 @@
 package edu.hm.cs.bikebattle.domain;
 
 import lombok.Data;
-import lombok.RequiredArgsConstructor;
 
 import javax.persistence.Entity;
 import javax.persistence.ManyToOne;
@@ -24,7 +23,6 @@ import java.util.List;
 
 @Entity
 @Data
-@RequiredArgsConstructor
 public class Drive extends BaseEntity{
 
     @Min(0)

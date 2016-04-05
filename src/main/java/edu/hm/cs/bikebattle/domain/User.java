@@ -1,7 +1,6 @@
 package edu.hm.cs.bikebattle.domain;
 
 import lombok.Data;
-import lombok.RequiredArgsConstructor;
 import org.hibernate.validator.constraints.Email;
 import org.hibernate.validator.constraints.Length;
 
@@ -27,7 +26,6 @@ import java.util.List;
 
 @Entity
 @Data
-@RequiredArgsConstructor
 public class User extends BaseEntity{
 
     @Length(min = 1)

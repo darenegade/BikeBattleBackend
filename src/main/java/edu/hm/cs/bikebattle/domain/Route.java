@@ -1,7 +1,6 @@
 package edu.hm.cs.bikebattle.domain;
 
 import lombok.Data;
-import lombok.RequiredArgsConstructor;
 import org.hibernate.validator.constraints.Length;
 
 import javax.persistence.ElementCollection;
@@ -26,7 +25,6 @@ import java.util.List;
 
 @Entity
 @Data
-@RequiredArgsConstructor
 public class Route extends BaseEntity{
 
     @Length(min = 1)

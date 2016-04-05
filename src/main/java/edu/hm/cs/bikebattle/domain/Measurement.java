@@ -1,7 +1,6 @@
 package edu.hm.cs.bikebattle.domain;
 
 import lombok.Data;
-import lombok.RequiredArgsConstructor;
 
 import javax.persistence.Embedded;
 import javax.persistence.Entity;
@@ -20,7 +19,6 @@ import javax.validation.constraints.Min;
 
 @Entity
 @Data
-@RequiredArgsConstructor
 public class Measurement extends BaseEntity{
 
     @Min(0)
