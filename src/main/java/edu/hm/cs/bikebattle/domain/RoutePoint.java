@@ -24,11 +24,16 @@ import javax.validation.constraints.Min;
 public class RoutePoint{
 
     @Range(min = -90, max = 90)
-    float latitude;
+    double latitude;
 
     @Range(min = -180, max = 180)
-    float longitude;
+    double longitude;
 
     @Min(0)
-    float height;
+    double altitude;
+
+    @Min(0)
+    long time;
+
+
 }
