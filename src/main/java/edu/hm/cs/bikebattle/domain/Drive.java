@@ -1,6 +1,7 @@
 package edu.hm.cs.bikebattle.domain;
 
 import lombok.Data;
+import lombok.NonNull;
 
 import javax.persistence.Entity;
 import javax.persistence.ManyToOne;
@@ -35,6 +36,7 @@ public class Drive extends BaseEntity{
     List<Measurement> measurements = new ArrayList<>();
 
     @NotNull
+    @NonNull
     @ManyToOne
     Route route;
 

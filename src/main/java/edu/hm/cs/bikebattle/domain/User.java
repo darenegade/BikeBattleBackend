@@ -1,6 +1,7 @@
 package edu.hm.cs.bikebattle.domain;
 
 import lombok.Data;
+import lombok.NonNull;
 import org.hibernate.validator.constraints.Email;
 import org.hibernate.validator.constraints.Length;
 
@@ -34,6 +35,7 @@ public class User extends BaseEntity{
     @Email(regexp = "^[_A-Za-z0-9-\\+]+(\\.[_A-Za-z0-9-]+)*@"
             + "[A-Za-z0-9-]+(\\.[A-Za-z0-9]+)*(\\.[A-Za-z]{2,})$")
     @NotNull
+    @NonNull
     @Column(unique = true)
     String email;
 

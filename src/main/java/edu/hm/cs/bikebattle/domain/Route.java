@@ -1,6 +1,7 @@
 package edu.hm.cs.bikebattle.domain;
 
 import lombok.Data;
+import lombok.NonNull;
 import org.hibernate.validator.constraints.Length;
 
 import javax.persistence.ElementCollection;
@@ -37,10 +38,12 @@ public class Route extends BaseEntity{
 
     @Enumerated(EnumType.STRING)
     @NotNull
+    @NonNull
     Difficulty difficulty;
 
     @Enumerated(EnumType.STRING)
     @NotNull
+    @NonNull
     Routetyp routetyp;
 
     @ElementCollection
