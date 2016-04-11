@@ -1,7 +1,6 @@
 package edu.hm.cs.bikebattle.repositories;
 
 import edu.hm.cs.bikebattle.domain.Drive;
-import edu.hm.cs.bikebattle.domain.Route;
 import org.springframework.data.jpa.repository.JpaRepository;
 import org.springframework.data.repository.query.Param;
 import org.springframework.data.rest.core.annotation.RepositoryRestResource;
@@ -25,6 +24,6 @@ public interface DriveRepository extends JpaRepository<Drive, UUID> {
      * Find the Drive entities with the given Route oid.
      * @param oid the unique oid of the Route that will be searched for in the route relation.
      */
-    List<Route> findByRouteOid(@Param(value = "oid") UUID oid);
+    List<Drive> findByRouteOid(@Param(value = "oid") UUID oid);
 
 }

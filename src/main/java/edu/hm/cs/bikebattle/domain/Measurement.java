@@ -22,9 +22,6 @@ import javax.validation.constraints.Min;
 public class Measurement extends BaseEntity{
 
     @Min(0)
-    float time;
-
-    @Min(0)
     float speed;
 
     @Embedded
