@@ -32,6 +32,4 @@ public class RoutePoint{
 
     @Min(0)
     long time;
-
-
 }
