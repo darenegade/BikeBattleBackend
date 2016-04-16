@@ -46,7 +46,6 @@ springBoot {
 }
 
 
-ext['tomcat.version'] = '7.0.52'
 dependencies {
     providedCompile ('org.projectlombok:lombok:1.16.8')
 
