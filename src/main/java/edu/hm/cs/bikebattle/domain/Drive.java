@@ -1,11 +1,13 @@
 package edu.hm.cs.bikebattle.domain;
 
+import lombok.AllArgsConstructor;
 import lombok.Data;
+import lombok.NoArgsConstructor;
 import lombok.NonNull;
 
+import javax.persistence.ElementCollection;
 import javax.persistence.Entity;
 import javax.persistence.ManyToOne;
-import javax.persistence.OneToMany;
 import javax.validation.constraints.Min;
 import javax.validation.constraints.NotNull;
 import java.util.ArrayList;
@@ -24,6 +26,8 @@ import java.util.List;
 
 @Entity
 @Data
+@NoArgsConstructor
+@AllArgsConstructor
 public class Drive extends BaseEntity{
 
     @Min(0)
@@ -32,12 +36,15 @@ public class Drive extends BaseEntity{
     @Min(0)
     float averageSpeed;
 
-    @OneToMany
+    @ElementCollection
     List<Measurement> measurements = new ArrayList<>();
 
     @NotNull
     @NonNull
     @ManyToOne
     Route route;
+
+    @ManyToOne
+    User owner;
 
 }

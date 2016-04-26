@@ -45,14 +45,12 @@ springBoot {
 	mainClass = "edu.hm.cs.bikebattle.BackendApplication"
 }
 
-
 dependencies {
     providedCompile ('org.projectlombok:lombok:1.16.8')
 
     /* Spring */
 	compile('org.springframework.boot:spring-boot-starter-data-jpa')
 	compile('org.springframework.boot:spring-boot-starter-data-rest')
-    compile('org.springframework.boot:spring-boot-starter-hateoas')
 	compile('org.springframework.boot:spring-boot-starter-web')
 	providedRuntime ('org.springframework.boot:spring-boot-starter-tomcat')
 

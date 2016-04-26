@@ -1,6 +1,8 @@
 package edu.hm.cs.bikebattle.domain;
 
+import lombok.AllArgsConstructor;
 import lombok.Data;
+import lombok.NoArgsConstructor;
 import lombok.NonNull;
 import org.hibernate.validator.constraints.Email;
 import org.hibernate.validator.constraints.Length;
@@ -8,7 +10,6 @@ import org.hibernate.validator.constraints.Length;
 import javax.persistence.Column;
 import javax.persistence.Entity;
 import javax.persistence.ManyToMany;
-import javax.persistence.OneToMany;
 import javax.validation.constraints.Min;
 import javax.validation.constraints.NotNull;
 import java.util.ArrayList;
@@ -27,6 +28,8 @@ import java.util.List;
 
 @Entity
 @Data
+@NoArgsConstructor
+@AllArgsConstructor
 public class User extends BaseEntity{
 
     @Length(min = 1)
@@ -40,17 +43,11 @@ public class User extends BaseEntity{
     String email;
 
     @Min(0)
-    float size;
+    Float size;
 
     @Min(0)
-    float weight;
+    Float weight;
 
     @ManyToMany
     List<User> friends = new ArrayList<>();
-
-    @OneToMany
-    List<Route> routes = new ArrayList<>();
-
-    @OneToMany
-    List<Drive> drives = new ArrayList<>();
 }

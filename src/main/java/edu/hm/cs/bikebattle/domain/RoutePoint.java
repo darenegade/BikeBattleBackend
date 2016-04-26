@@ -1,6 +1,8 @@
 package edu.hm.cs.bikebattle.domain;
 
+import lombok.AllArgsConstructor;
 import lombok.Data;
+import lombok.NoArgsConstructor;
 import org.hibernate.validator.constraints.Range;
 
 import javax.persistence.Embeddable;
@@ -19,6 +21,8 @@ import javax.validation.constraints.Min;
 
 @Embeddable
 @Data
+@NoArgsConstructor
+@AllArgsConstructor
 public class RoutePoint{
 
     @Range(min = -90, max = 90)

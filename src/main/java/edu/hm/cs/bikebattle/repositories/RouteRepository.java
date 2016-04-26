@@ -2,7 +2,7 @@ package edu.hm.cs.bikebattle.repositories;
 
 import edu.hm.cs.bikebattle.domain.Difficulty;
 import edu.hm.cs.bikebattle.domain.Route;
-import org.springframework.data.jpa.repository.JpaRepository;
+import org.springframework.data.repository.CrudRepository;
 import org.springframework.data.repository.query.Param;
 import org.springframework.data.rest.core.annotation.RepositoryRestResource;
 
@@ -19,11 +19,14 @@ import java.util.UUID;
  * System: 2,3 GHz Intel Core i7, 16 GB 1600 MHz DDR3
  */
 @RepositoryRestResource
-public interface RouteRepository extends JpaRepository<Route, UUID> {
+public interface RouteRepository extends CrudRepository<Route, UUID> {
 
     List<Route> findByDifficulty(@Param("difficulty") Difficulty difficulty);
 
     List<Route> findByName(@Param("name") String name);
     List<Route> findByNameContainingIgnoreCase(@Param("name") String name);
+
+    List<Route> findByOwnerOid(@Param(value = "oid") UUID oid);
+
 
 }
