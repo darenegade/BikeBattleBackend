@@ -2,6 +2,7 @@ package edu.hm.cs.bikebattle.domain;
 
 import lombok.AllArgsConstructor;
 import lombok.Data;
+import lombok.EqualsAndHashCode;
 import lombok.NoArgsConstructor;
 import lombok.NonNull;
 import org.hibernate.validator.constraints.Email;
@@ -12,8 +13,8 @@ import javax.persistence.Entity;
 import javax.persistence.ManyToMany;
 import javax.validation.constraints.Min;
 import javax.validation.constraints.NotNull;
-import java.util.ArrayList;
-import java.util.List;
+import java.util.HashSet;
+import java.util.Set;
 
 
 /**
@@ -26,6 +27,7 @@ import java.util.List;
  * System: 2,3 GHz Intel Core i7, 16 GB 1600 MHz DDR3
  */
 
+@EqualsAndHashCode(callSuper = true, exclude = "friends")
 @Entity
 @Data
 @NoArgsConstructor
@@ -49,5 +51,6 @@ public class User extends BaseEntity{
     Float weight;
 
     @ManyToMany
-    List<User> friends = new ArrayList<>();
+
+    Set<User> friends = new HashSet<>();
 }
