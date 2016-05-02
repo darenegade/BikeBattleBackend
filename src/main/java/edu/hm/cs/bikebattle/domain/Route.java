@@ -55,5 +55,7 @@ public class Route extends BaseEntity{
     List<RoutePoint> routePoints = new ArrayList<>();
 
     @ManyToOne
+    @NotNull
+    @NonNull
     User owner;
 }
