@@ -45,6 +45,8 @@ public class Drive extends BaseEntity{
     Route route;
 
     @ManyToOne
+    @NotNull
+    @NonNull
     User owner;
 
 }
