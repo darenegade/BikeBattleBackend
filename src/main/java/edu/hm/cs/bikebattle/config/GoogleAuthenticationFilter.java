@@ -4,6 +4,8 @@ import com.google.api.client.googleapis.auth.oauth2.GoogleIdToken;
 import com.google.api.client.googleapis.auth.oauth2.GoogleIdTokenVerifier;
 import com.google.api.client.http.javanet.NetHttpTransport;
 import com.google.api.client.json.jackson2.JacksonFactory;
+import edu.hm.cs.bikebattle.domain.User;
+import edu.hm.cs.bikebattle.repositories.UserRepository;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 import org.springframework.security.authentication.UsernamePasswordAuthenticationToken;
@@ -41,6 +43,12 @@ public class GoogleAuthenticationFilter extends OncePerRequestFilter {
       .build();
 
 
+  private final UserRepository userRepository;
+
+  public GoogleAuthenticationFilter(UserRepository userRepository) {
+    this.userRepository = userRepository;
+  }
+
   @Override
   protected void doFilterInternal(HttpServletRequest request, HttpServletResponse response, FilterChain filterChain) throws ServletException, IOException {
 
@@ -75,7 +83,20 @@ public class GoogleAuthenticationFilter extends OncePerRequestFilter {
     String email = payload.getEmail();
     String name = (String) payload.get("name");
 
-    UserInfo userInfo = new UserInfo(name, email);
+    //Find requesting user, create user if not in db
+    User userInfo = userRepository.findByEmail(email);
+
+    if(userInfo == null){
+
+      userInfo = new User();
+      userInfo.setEmail(email);
+      userInfo.setName(name);
+
+      userInfo = userRepository.save(userInfo);
+    }
+
+    //Set UserLocation in Header
+    response.addHeader("UserLocation", userInfo.getOid().toString());
 
     //Set Authentication Context
     GrantedAuthority authority = new SimpleGrantedAuthority("user");

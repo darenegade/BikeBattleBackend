@@ -51,6 +51,5 @@ public class User extends BaseEntity{
     Float weight;
 
     @ManyToMany
-
     Set<User> friends = new HashSet<>();
 }
