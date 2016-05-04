@@ -20,6 +20,7 @@ import java.util.UUID;
 @RepositoryRestResource(exported = true)
 public interface UserRepository extends CrudRepository<User, UUID> {
 
+    User findByEmail(@Param("email") String email);
     List<User> findByName(@Param("name") String name);
     List<User> findByNameContainingIgnoreCase(@Param("name") String name);
 }
