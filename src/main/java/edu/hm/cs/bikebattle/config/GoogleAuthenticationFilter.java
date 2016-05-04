@@ -96,7 +96,7 @@ public class GoogleAuthenticationFilter extends OncePerRequestFilter {
     }
 
     //Set UserLocation in Header
-    response.addHeader("UserLocation", userInfo.getOid().toString());
+    response.addHeader("UserLocation", String.valueOf(userInfo.getOid()));
 
     //Set Authentication Context
     GrantedAuthority authority = new SimpleGrantedAuthority("user");
