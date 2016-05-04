@@ -5,6 +5,7 @@ import lombok.Data;
 import lombok.EqualsAndHashCode;
 import lombok.NoArgsConstructor;
 import lombok.NonNull;
+import lombok.ToString;
 import org.hibernate.validator.constraints.Email;
 import org.hibernate.validator.constraints.Length;
 
@@ -28,6 +29,7 @@ import java.util.Set;
  */
 
 @EqualsAndHashCode(callSuper = true, exclude = "friends")
+@ToString(exclude = "friends")
 @Entity
 @Data
 @NoArgsConstructor
