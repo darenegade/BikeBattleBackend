@@ -1,11 +1,10 @@
 package edu.hm.cs.bikebattle.config;
 
 import org.springframework.context.annotation.Configuration;
-import org.springframework.security.config.annotation.method.configuration.EnableGlobalMethodSecurity;
 import org.springframework.security.config.annotation.web.builders.HttpSecurity;
-import org.springframework.security.config.annotation.web.configuration.EnableWebSecurity;
 import org.springframework.security.config.annotation.web.configuration.WebSecurityConfigurerAdapter;
 import org.springframework.security.config.http.SessionCreationPolicy;
+import org.springframework.security.web.authentication.www.BasicAuthenticationFilter;
 
 /**
  * Organization: HM FK07.
@@ -17,16 +16,17 @@ import org.springframework.security.config.http.SessionCreationPolicy;
  * System: 2,3 GHz Intel Core i7, 16 GB 1600 MHz DDR3
  */
 @Configuration
-@EnableWebSecurity
-@EnableGlobalMethodSecurity(prePostEnabled = true)
+//@EnableWebSecurity
+//@EnableGlobalMethodSecurity(prePostEnabled = true)
 public class SecurityConfig extends WebSecurityConfigurerAdapter {
 
   @Override
   protected void configure(HttpSecurity http) throws Exception {
     http
-        .authorizeRequests().anyRequest().authenticated()
+        .addFilterBefore(new GoogleAuthenticationFilter(), BasicAuthenticationFilter.class)
+        .authorizeRequests().anyRequest().permitAll()
         .and()
-        .sessionManagement().sessionCreationPolicy(SessionCreationPolicy.NEVER);
+        .sessionManagement().sessionCreationPolicy(SessionCreationPolicy.STATELESS);
   }
 
 }

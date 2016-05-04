@@ -56,6 +56,7 @@ dependencies {
 		exclude(module: 'jackson-mapper-asl') // We already have a more recent jackson via Spring Boot
 	}
 	compile('org.springframework.security:spring-security-jwt:1.0.4.RELEASE')
+	compile('com.google.api-client:google-api-client:1.20.0')
 
 	//providedRuntime ('org.springframework.boot:spring-boot-starter-tomcat')
 
