@@ -32,15 +32,6 @@ repositories {
 	maven { url "https://repo.spring.io/milestone" }
 }
 
-// Set source directory
-sourceSets {
-	main {
-		java {
-			srcDir 'src'
-		}
-	}
-}
-
 springBoot {
 	mainClass = "edu.hm.cs.bikebattle.BackendApplication"
 }
