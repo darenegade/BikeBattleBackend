@@ -3,9 +3,9 @@ package edu.hm.cs.bikebattle.domain;
 import lombok.AllArgsConstructor;
 import lombok.Data;
 import lombok.NoArgsConstructor;
+import org.hibernate.validator.constraints.Range;
 
 import javax.validation.constraints.Min;
-import javax.validation.constraints.Size;
 
 
 /**
@@ -21,14 +21,17 @@ import javax.validation.constraints.Size;
 @Data
 @NoArgsConstructor
 @AllArgsConstructor
-public class RoutePoint {
+public class RoutePoint{
 
-  @Size(min = 2, max = 2)
-  double[] location;
+    @Range(min = -90, max = 90)
+    double latitude;
 
-  @Min(0)
-  double altitude;
+    @Range(min = -180, max = 180)
+    double longitude;
 
-  @Min(0)
-  long time;
+    @Min(0)
+    double altitude;
+
+    @Min(0)
+    long time;
 }
