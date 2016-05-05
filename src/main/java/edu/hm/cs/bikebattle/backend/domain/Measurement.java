@@ -4,8 +4,6 @@ import lombok.AllArgsConstructor;
 import lombok.Data;
 import lombok.NoArgsConstructor;
 
-import javax.persistence.Embeddable;
-import javax.persistence.Embedded;
 import javax.validation.constraints.Min;
 
 
@@ -19,15 +17,13 @@ import javax.validation.constraints.Min;
  * System: 2,3 GHz Intel Core i7, 16 GB 1600 MHz DDR3
  */
 
-@Embeddable
 @Data
 @NoArgsConstructor
 @AllArgsConstructor
-public class Measurement{
+public class Measurement {
 
-    @Min(0)
-    float speed;
+  @Min(0)
+  float speed;
 
-    @Embedded
-    RoutePoint routePoint;
+  RoutePoint routePoint;
 }

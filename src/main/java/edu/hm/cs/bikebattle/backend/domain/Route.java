@@ -6,12 +6,9 @@ import lombok.EqualsAndHashCode;
 import lombok.NoArgsConstructor;
 import lombok.NonNull;
 import org.hibernate.validator.constraints.Length;
+import org.springframework.data.mongodb.core.mapping.DBRef;
+import org.springframework.data.mongodb.core.mapping.Document;
 
-import javax.persistence.ElementCollection;
-import javax.persistence.Entity;
-import javax.persistence.EnumType;
-import javax.persistence.Enumerated;
-import javax.persistence.ManyToOne;
 import javax.validation.constraints.Min;
 import javax.validation.constraints.NotNull;
 import java.util.ArrayList;
@@ -29,35 +26,34 @@ import java.util.List;
  */
 
 @EqualsAndHashCode(callSuper = true)
-@Entity
 @Data
 @NoArgsConstructor
 @AllArgsConstructor
-public class Route extends BaseEntity{
+@Document
+public class Route extends BaseEntity {
 
-    @Length(min = 1)
-    String name;
+  @Length(min = 1)
+  String name;
 
-    boolean privat;
+  boolean privat;
 
-    @Min(0)
-    float length;
+  @Min(0)
+  float length;
 
-    @Enumerated(EnumType.STRING)
-    @NotNull
-    @NonNull
-    Difficulty difficulty;
+  @NotNull
+  @NonNull
+  Difficulty difficulty;
 
-    @Enumerated(EnumType.STRING)
-    @NotNull
-    @NonNull
-    Routetyp routetyp;
+  @NotNull
+  @NonNull
+  Routetyp routetyp;
 
-    @ElementCollection
-    List<RoutePoint> routePoints = new ArrayList<>();
+  double[] start;
 
-    @ManyToOne
-    @NotNull
-    @NonNull
-    User owner;
+  List<RoutePoint> routePoints = new ArrayList<>();
+
+  @NotNull
+  @NonNull
+  @DBRef
+  User owner;
 }

@@ -8,10 +8,10 @@ import lombok.NonNull;
 import lombok.ToString;
 import org.hibernate.validator.constraints.Email;
 import org.hibernate.validator.constraints.Length;
+import org.springframework.data.mongodb.core.index.Indexed;
+import org.springframework.data.mongodb.core.mapping.DBRef;
+import org.springframework.data.mongodb.core.mapping.Document;
 
-import javax.persistence.Column;
-import javax.persistence.Entity;
-import javax.persistence.ManyToMany;
 import javax.validation.constraints.Min;
 import javax.validation.constraints.NotNull;
 import java.util.HashSet;
@@ -30,28 +30,28 @@ import java.util.Set;
 
 @EqualsAndHashCode(callSuper = true, exclude = "friends")
 @ToString(exclude = "friends")
-@Entity
 @Data
 @NoArgsConstructor
 @AllArgsConstructor
-public class User extends BaseEntity{
+@Document
+public class User extends BaseEntity {
 
-    @Length(min = 1)
-    String name;
+  @Length(min = 1)
+  String name;
 
-    @Email(regexp = "^[_A-Za-z0-9-\\+]+(\\.[_A-Za-z0-9-]+)*@"
-            + "[A-Za-z0-9-]+(\\.[A-Za-z0-9]+)*(\\.[A-Za-z]{2,})$")
-    @NotNull
-    @NonNull
-    @Column(unique = true)
-    String email;
+  @Email(regexp = "^[_A-Za-z0-9-\\+]+(\\.[_A-Za-z0-9-]+)*@"
+      + "[A-Za-z0-9-]+(\\.[A-Za-z0-9]+)*(\\.[A-Za-z]{2,})$")
+  @NotNull
+  @NonNull
+  @Indexed(unique = true)
+  String email;
 
-    @Min(0)
-    Float size;
+  @Min(0)
+  Float size;
 
-    @Min(0)
-    Float weight;
+  @Min(0)
+  Float weight;
 
-    @ManyToMany
-    Set<User> friends = new HashSet<>();
+  @DBRef
+  Set<User> friends = new HashSet<>();
 }
