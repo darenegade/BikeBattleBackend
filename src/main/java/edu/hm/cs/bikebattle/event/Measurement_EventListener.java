@@ -15,12 +15,11 @@ import org.springframework.stereotype.Component;
  */
 @Component
 public class Measurement_EventListener extends AbstractRepositoryEventListener<Measurement> {
-	// If you need access to the database you can autowire a Repository.
-	//
-	// @Autowired
-	// <EntityName>Repository repo;
+  // If you need access to the database you can autowire a Repository.
+  //
+  // @Autowired
+  // <EntityName>Repository repo;
 
 
-
-	//Override Methods here to add your custom logic
+  //Override Methods here to add your custom logic
 }

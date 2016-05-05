@@ -23,4 +23,26 @@ public class Route_EventListener extends AbstractRepositoryEventListener<Route> 
 
 
 	//Override Methods here to add your custom logic
+
+  @Override
+  protected void onBeforeCreate(Route entity) {
+    if(entity.getRoutePoints().size() > 0)
+      entity.setStart(new double[]{
+          entity.getRoutePoints().get(0).getLongitude(),
+          entity.getRoutePoints().get(0).getLatitude()
+      });
+
+    super.onBeforeCreate(entity);
+  }
+
+  @Override
+  protected void onBeforeSave(Route entity) {
+    if(entity.getRoutePoints().size() > 0)
+      entity.setStart(new double[]{
+          entity.getRoutePoints().get(0).getLongitude(),
+          entity.getRoutePoints().get(0).getLatitude()
+      });
+
+    super.onBeforeSave(entity);
+  }
 }

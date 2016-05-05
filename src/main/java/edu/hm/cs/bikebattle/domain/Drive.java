@@ -5,10 +5,9 @@ import lombok.Data;
 import lombok.EqualsAndHashCode;
 import lombok.NoArgsConstructor;
 import lombok.NonNull;
+import org.springframework.data.mongodb.core.mapping.DBRef;
+import org.springframework.data.mongodb.core.mapping.Document;
 
-import javax.persistence.ElementCollection;
-import javax.persistence.Entity;
-import javax.persistence.ManyToOne;
 import javax.validation.constraints.Min;
 import javax.validation.constraints.NotNull;
 import java.util.ArrayList;
@@ -26,29 +25,28 @@ import java.util.List;
  */
 
 @EqualsAndHashCode(callSuper = true)
-@Entity
+@Document
 @Data
 @NoArgsConstructor
 @AllArgsConstructor
-public class Drive extends BaseEntity{
+public class Drive extends BaseEntity {
 
-    @Min(0)
-    float totalTime;
+  @Min(0)
+  float totalTime;
 
-    @Min(0)
-    float averageSpeed;
+  @Min(0)
+  float averageSpeed;
 
-    @ElementCollection
-    List<Measurement> measurements = new ArrayList<>();
+  List<Measurement> measurements = new ArrayList<>();
 
-    @NotNull
-    @NonNull
-    @ManyToOne
-    Route route;
+  @NotNull
+  @NonNull
+  @DBRef
+  Route route;
 
-    @ManyToOne
-    @NotNull
-    @NonNull
-    User owner;
+  @NotNull
+  @NonNull
+  @DBRef
+  User owner;
 
 }

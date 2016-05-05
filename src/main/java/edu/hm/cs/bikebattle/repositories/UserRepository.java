@@ -5,8 +5,8 @@ import org.springframework.data.repository.CrudRepository;
 import org.springframework.data.repository.query.Param;
 import org.springframework.data.rest.core.annotation.RepositoryRestResource;
 
+import java.math.BigInteger;
 import java.util.List;
-import java.util.UUID;
 
 /**
  * Organization: HM FK07.
@@ -18,9 +18,11 @@ import java.util.UUID;
  * System: 2,3 GHz Intel Core i7, 16 GB 1600 MHz DDR3
  */
 @RepositoryRestResource(exported = true)
-public interface UserRepository extends CrudRepository<User, UUID> {
+public interface UserRepository extends CrudRepository<User, BigInteger> {
 
-    User findByEmail(@Param("email") String email);
-    List<User> findByName(@Param("name") String name);
-    List<User> findByNameContainingIgnoreCase(@Param("name") String name);
+  User findByEmail(@Param("email") String email);
+
+  List<User> findByName(@Param("name") String name);
+
+  List<User> findByNameContainingIgnoreCase(@Param("name") String name);
 }
