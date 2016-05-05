@@ -86,7 +86,7 @@ public class GoogleAuthenticationFilter extends OncePerRequestFilter {
     //Find requesting user, create user if not in db
     User userInfo = userRepository.findByEmail(email);
 
-    if(userInfo == null){
+    if (userInfo == null) {
 
       userInfo = new User();
       userInfo.setEmail(email);

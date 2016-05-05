@@ -30,28 +30,30 @@ import java.util.List;
 @NoArgsConstructor
 @AllArgsConstructor
 @Document
-public class Route extends BaseEntity{
+public class Route extends BaseEntity {
 
-    @Length(min = 1)
-    String name;
+  @Length(min = 1)
+  String name;
 
-    boolean privat;
+  boolean privat;
 
-    @Min(0)
-    float length;
+  @Min(0)
+  float length;
 
-    @NotNull
-    @NonNull
-    Difficulty difficulty;
+  @NotNull
+  @NonNull
+  Difficulty difficulty;
 
-    @NotNull
-    @NonNull
-    Routetyp routetyp;
+  @NotNull
+  @NonNull
+  Routetyp routetyp;
 
-    List<RoutePoint> routePoints = new ArrayList<>();
+  double[] start;
 
-    @NotNull
-    @NonNull
-    @DBRef
-    User owner;
+  List<RoutePoint> routePoints = new ArrayList<>();
+
+  @NotNull
+  @NonNull
+  @DBRef
+  User owner;
 }

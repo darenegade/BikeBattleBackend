@@ -29,24 +29,24 @@ import java.util.List;
 @Data
 @NoArgsConstructor
 @AllArgsConstructor
-public class Drive extends BaseEntity{
+public class Drive extends BaseEntity {
 
-    @Min(0)
-    float totalTime;
+  @Min(0)
+  float totalTime;
 
-    @Min(0)
-    float averageSpeed;
+  @Min(0)
+  float averageSpeed;
 
-    List<Measurement> measurements = new ArrayList<>();
+  List<Measurement> measurements = new ArrayList<>();
 
-    @NotNull
-    @NonNull
-    @DBRef
-    Route route;
+  @NotNull
+  @NonNull
+  @DBRef
+  Route route;
 
-    @NotNull
-    @NonNull
-    @DBRef
-    User owner;
+  @NotNull
+  @NonNull
+  @DBRef
+  User owner;
 
 }

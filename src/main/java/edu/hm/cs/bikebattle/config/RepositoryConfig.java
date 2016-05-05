@@ -20,7 +20,7 @@ import org.springframework.data.rest.webmvc.config.RepositoryRestConfigurerAdapt
 public class RepositoryConfig extends RepositoryRestConfigurerAdapter {
 
   @Override
-  public void configureRepositoryRestConfiguration( RepositoryRestConfiguration config) {
+  public void configureRepositoryRestConfiguration(RepositoryRestConfiguration config) {
     config.exposeIdsFor(Drive.class);
     config.exposeIdsFor(Route.class);
     config.exposeIdsFor(User.class);

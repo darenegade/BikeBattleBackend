@@ -20,10 +20,10 @@ import javax.validation.constraints.Min;
 @Data
 @NoArgsConstructor
 @AllArgsConstructor
-public class Measurement{
+public class Measurement {
 
-    @Min(0)
-    float speed;
+  @Min(0)
+  float speed;
 
-    RoutePoint routePoint;
+  RoutePoint routePoint;
 }

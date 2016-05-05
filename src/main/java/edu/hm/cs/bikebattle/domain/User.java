@@ -34,24 +34,24 @@ import java.util.Set;
 @NoArgsConstructor
 @AllArgsConstructor
 @Document
-public class User extends BaseEntity{
+public class User extends BaseEntity {
 
-    @Length(min = 1)
-    String name;
+  @Length(min = 1)
+  String name;
 
-    @Email(regexp = "^[_A-Za-z0-9-\\+]+(\\.[_A-Za-z0-9-]+)*@"
-            + "[A-Za-z0-9-]+(\\.[A-Za-z0-9]+)*(\\.[A-Za-z]{2,})$")
-    @NotNull
-    @NonNull
-    @Indexed(unique = true)
-    String email;
+  @Email(regexp = "^[_A-Za-z0-9-\\+]+(\\.[_A-Za-z0-9-]+)*@"
+      + "[A-Za-z0-9-]+(\\.[A-Za-z0-9]+)*(\\.[A-Za-z]{2,})$")
+  @NotNull
+  @NonNull
+  @Indexed(unique = true)
+  String email;
 
-    @Min(0)
-    Float size;
+  @Min(0)
+  Float size;
 
-    @Min(0)
-    Float weight;
+  @Min(0)
+  Float weight;
 
-    @DBRef
-    Set<User> friends = new HashSet<>();
+  @DBRef
+  Set<User> friends = new HashSet<>();
 }

@@ -2,6 +2,7 @@ package edu.hm.cs.bikebattle.repositories;
 
 import edu.hm.cs.bikebattle.domain.Difficulty;
 import edu.hm.cs.bikebattle.domain.Route;
+import org.springframework.data.geo.Circle;
 import org.springframework.data.repository.CrudRepository;
 import org.springframework.data.repository.query.Param;
 import org.springframework.data.rest.core.annotation.RepositoryRestResource;
@@ -21,12 +22,15 @@ import java.util.List;
 @RepositoryRestResource
 public interface RouteRepository extends CrudRepository<Route, BigInteger> {
 
-    List<Route> findByDifficulty(@Param("difficulty") Difficulty difficulty);
+  List<Route> findByDifficulty(@Param("difficulty") Difficulty difficulty);
 
-    List<Route> findByName(@Param("name") String name);
-    List<Route> findByNameContainingIgnoreCase(@Param("name") String name);
+  List<Route> findByName(@Param("name") String name);
 
-    List<Route> findByOwnerOid(@Param(value = "oid") BigInteger oid);
+  List<Route> findByNameContainingIgnoreCase(@Param("name") String name);
+
+  List<Route> findByOwnerOid(@Param(value = "oid") BigInteger oid);
+
+  List<Route> findByStartWithin(Circle circle);
 
 
 }

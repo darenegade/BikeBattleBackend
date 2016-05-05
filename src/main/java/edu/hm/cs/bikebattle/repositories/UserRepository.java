@@ -20,7 +20,9 @@ import java.util.List;
 @RepositoryRestResource(exported = true)
 public interface UserRepository extends CrudRepository<User, BigInteger> {
 
-    User findByEmail(@Param("email") String email);
-    List<User> findByName(@Param("name") String name);
-    List<User> findByNameContainingIgnoreCase(@Param("name") String name);
+  User findByEmail(@Param("email") String email);
+
+  List<User> findByName(@Param("name") String name);
+
+  List<User> findByNameContainingIgnoreCase(@Param("name") String name);
 }

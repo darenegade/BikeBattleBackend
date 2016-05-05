@@ -20,12 +20,13 @@ import java.util.List;
 @RepositoryRestResource
 public interface DriveRepository extends CrudRepository<Drive, BigInteger> {
 
-    /**
-     * Find the Drive entities with the given Route oid.
-     * @param oid the unique oid of the Route that will be searched for in the route relation.
-     */
-    List<Drive> findByRouteOid(@Param(value = "oid") BigInteger oid);
+  /**
+   * Find the Drive entities with the given Route oid.
+   *
+   * @param oid the unique oid of the Route that will be searched for in the route relation.
+   */
+  List<Drive> findByRouteOid(@Param(value = "oid") BigInteger oid);
 
-    List<Drive> findByOwnerOid(@Param(value = "oid") BigInteger oid);
+  List<Drive> findByOwnerOid(@Param(value = "oid") BigInteger oid);
 
 }
