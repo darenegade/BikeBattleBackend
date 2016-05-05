@@ -1,4 +1,4 @@
-package edu.hm.cs.bikebattle.domain;
+package edu.hm.cs.bikebattle.backend.domain;
 
 import org.hibernate.annotations.GenericGenerator;
 import org.hibernate.annotations.Type;

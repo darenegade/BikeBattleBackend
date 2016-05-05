@@ -1,4 +1,4 @@
-package edu.hm.cs.bikebattle.domain;
+package edu.hm.cs.bikebattle.backend.domain;
 
 import lombok.AllArgsConstructor;
 import lombok.Data;

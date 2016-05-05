@@ -1,6 +1,6 @@
-package edu.hm.cs.bikebattle.event;
+package edu.hm.cs.bikebattle.backend.event;
 
-import edu.hm.cs.bikebattle.domain.Route;
+import edu.hm.cs.bikebattle.backend.domain.Route;
 import org.springframework.data.rest.core.event.AbstractRepositoryEventListener;
 import org.springframework.stereotype.Component;
 

@@ -1,6 +1,6 @@
-package edu.hm.cs.bikebattle.config;
+package edu.hm.cs.bikebattle.backend.config;
 
-import edu.hm.cs.bikebattle.repositories.UserRepository;
+import edu.hm.cs.bikebattle.backend.repositories.UserRepository;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.context.annotation.Configuration;
 import org.springframework.security.config.annotation.web.builders.HttpSecurity;

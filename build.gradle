@@ -33,7 +33,7 @@ repositories {
 }
 
 springBoot {
-	mainClass = "edu.hm.cs.bikebattle.BackendApplication"
+	mainClass = "edu.hm.cs.bikebattle.backend.BackendApplication"
 }
 
 dependencies {

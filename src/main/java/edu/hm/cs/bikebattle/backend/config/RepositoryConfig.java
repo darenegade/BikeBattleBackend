@@ -1,8 +1,8 @@
-package edu.hm.cs.bikebattle.config;
+package edu.hm.cs.bikebattle.backend.config;
 
-import edu.hm.cs.bikebattle.domain.Drive;
-import edu.hm.cs.bikebattle.domain.Route;
-import edu.hm.cs.bikebattle.domain.User;
+import edu.hm.cs.bikebattle.backend.domain.Drive;
+import edu.hm.cs.bikebattle.backend.domain.Route;
+import edu.hm.cs.bikebattle.backend.domain.User;
 import org.springframework.context.annotation.Configuration;
 import org.springframework.data.rest.core.config.RepositoryRestConfiguration;
 import org.springframework.data.rest.webmvc.config.RepositoryRestConfigurerAdapter;

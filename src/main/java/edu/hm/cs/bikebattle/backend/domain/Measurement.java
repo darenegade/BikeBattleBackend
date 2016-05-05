@@ -1,11 +1,11 @@
-package edu.hm.cs.bikebattle.domain;
+package edu.hm.cs.bikebattle.backend.domain;
 
 import lombok.AllArgsConstructor;
 import lombok.Data;
 import lombok.NoArgsConstructor;
-import org.hibernate.validator.constraints.Range;
 
 import javax.persistence.Embeddable;
+import javax.persistence.Embedded;
 import javax.validation.constraints.Min;
 
 
@@ -23,17 +23,11 @@ import javax.validation.constraints.Min;
 @Data
 @NoArgsConstructor
 @AllArgsConstructor
-public class RoutePoint{
-
-    @Range(min = -90, max = 90)
-    double latitude;
-
-    @Range(min = -180, max = 180)
-    double longitude;
+public class Measurement{
 
     @Min(0)
-    double altitude;
+    float speed;
 
-    @Min(0)
-    long time;
+    @Embedded
+    RoutePoint routePoint;
 }

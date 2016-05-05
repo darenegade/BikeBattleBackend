@@ -1,4 +1,4 @@
-package edu.hm.cs.bikebattle;
+package edu.hm.cs.bikebattle.backend;
 
 import org.springframework.boot.SpringApplication;
 import org.springframework.boot.autoconfigure.SpringBootApplication;

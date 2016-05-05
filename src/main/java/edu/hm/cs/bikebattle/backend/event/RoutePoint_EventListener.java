@@ -1,6 +1,6 @@
-package edu.hm.cs.bikebattle.event;
+package edu.hm.cs.bikebattle.backend.event;
 
-import edu.hm.cs.bikebattle.domain.Drive;
+import edu.hm.cs.bikebattle.backend.domain.RoutePoint;
 import org.springframework.data.rest.core.event.AbstractRepositoryEventListener;
 import org.springframework.stereotype.Component;
 
@@ -14,8 +14,7 @@ import org.springframework.stereotype.Component;
  * System: 2,3 GHz Intel Core i7, 16 GB 1600 MHz DDR3
  */
 @Component
-public class Drive_EventListener extends AbstractRepositoryEventListener<Drive> {
-
+public class RoutePoint_EventListener extends AbstractRepositoryEventListener<RoutePoint> {
 	// If you need access to the database you can autowire a Repository.
 	//
 	// @Autowired

@@ -1,7 +1,13 @@
-package edu.hm.cs.bikebattle.repositories;
+package edu.hm.cs.bikebattle.backend.repositories;
 
+<<<<<<< Updated upstream:src/main/java/edu/hm/cs/bikebattle/repositories/RouteRepository.java
 import edu.hm.cs.bikebattle.domain.Difficulty;
 import edu.hm.cs.bikebattle.domain.Route;
+=======
+import edu.hm.cs.bikebattle.backend.domain.Difficulty;
+import edu.hm.cs.bikebattle.backend.domain.Route;
+import org.springframework.data.geo.Circle;
+>>>>>>> Stashed changes:src/main/java/edu/hm/cs/bikebattle/backend/repositories/RouteRepository.java
 import org.springframework.data.repository.CrudRepository;
 import org.springframework.data.repository.query.Param;
 import org.springframework.data.rest.core.annotation.RepositoryRestResource;
