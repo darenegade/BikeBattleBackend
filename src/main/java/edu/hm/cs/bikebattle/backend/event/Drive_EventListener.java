@@ -1,7 +1,10 @@
 package edu.hm.cs.bikebattle.backend.event;
 
 import edu.hm.cs.bikebattle.backend.domain.Drive;
+import edu.hm.cs.bikebattle.backend.domain.User;
 import org.springframework.data.rest.core.event.AbstractRepositoryEventListener;
+import org.springframework.security.authentication.UsernamePasswordAuthenticationToken;
+import org.springframework.security.core.context.SecurityContextHolder;
 import org.springframework.stereotype.Component;
 
 /**
@@ -27,12 +30,12 @@ public class Drive_EventListener extends AbstractRepositoryEventListener<Drive> 
   @Override
   protected void onBeforeCreate(Drive entity) {
 
-    /**UsernamePasswordAuthenticationToken auth = (UsernamePasswordAuthenticationToken) SecurityContextHolder
+    UsernamePasswordAuthenticationToken auth = (UsernamePasswordAuthenticationToken) SecurityContextHolder
         .getContext().getAuthentication();
 
     User user = (User) auth.getPrincipal();
 
-    entity.setOwner(user);**/
+    entity.setOwner(user);
 
     super.onBeforeCreate(entity);
   }
